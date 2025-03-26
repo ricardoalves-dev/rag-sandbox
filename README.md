@@ -1,14 +1,11 @@
 # Vercel AI SDK RAG Guide Starter Project
 
-This is the starter project for the Vercel AI SDK [Retrieval-Augmented Generation (RAG) guide](https://sdk.vercel.ai/docs/guides/rag-chatbot).
+Este projeto de estudo usa como base [Retrieval-Augmented Generation (RAG) guide](https://sdk.vercel.ai/docs/guides/rag-chatbot).
 
-In this project, you will build a chatbot that will only respond with information that it has within its knowledge base. The chatbot will be able to both store and retrieve information. This project has many interesting use cases from customer support through to building your own second brain!
-
-This project will use the following stack:
-
-- [Next.js](https://nextjs.org) 14 (App Router)
-- [Vercel AI SDK](https://sdk.vercel.ai/docs)
-- [OpenAI](https://openai.com)
-- [Drizzle ORM](https://orm.drizzle.team)
-- [Postgres](https://www.postgresql.org/) with [ pgvector ](https://github.com/pgvector/pgvector)
-- [shadcn-ui](https://ui.shadcn.com) and [TailwindCSS](https://tailwindcss.com) for styling
+# Passos
+1. Executar **docker compose up** para criar um docker container com o postgres que será nosso banco de dados vetorial
+2. Renomear o arquivo **.env.example** para **.env**
+3. Configurar no **.env** a string de conexão com o postgres
+4. Executar **npm run db:migrate** para:
+    - Adicionar extensão **pgvector** ao banco de dados
+    - Criar uma nova tabela chamada **resources** com 4 colunas (id, content, createdAt, e updatedAt)
